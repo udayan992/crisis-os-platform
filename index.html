@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crisis OS - Modular Response Platform</title>
+    <!-- Modern Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-blue">
+    <!-- Background Elements for Premium Look -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <div class="app-container">
+        
+        <!-- ============================================== -->
+        <!-- CONFIGURATION SIDEBAR (CMS)                    -->
+        <!-- ============================================== -->
+        <aside class="sidebar glass-panel">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h2>Crisis OS</h2>
+                </div>
+                <p class="subtitle">Command Center Configurator</p>
+            </div>
+            
+            <div class="config-section">
+                <h3><i class="fa-solid fa-sliders"></i> Deployment Settings</h3>
+                <div class="input-group">
+                    <label for="crisis-type">Crisis Type</label>
+                    <div class="custom-select">
+                        <select id="crisis-type">
+                            <option value="Flood">Flood Response</option>
+                            <option value="Earthquake">Earthquake Relief</option>
+                            <option value="Pandemic">Pandemic Management</option>
+                            <option value="Wildfire">Wildfire Evacuation</option>
+                            <option value="Hurricane">Hurricane Alert</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down select-icon"></i>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="crisis-location">Location</label>
+                    <div class="input-with-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <input type="text" id="crisis-location" value="Kerala, India" placeholder="Enter location...">
+                    </div>
+                </div>
+            </div>
+
+            <div class="config-section">
+                <h3><i class="fa-solid fa-cubes"></i> Active Modules</h3>
+                <p class="section-desc">Toggle modules to instantly reconfigure the platform.</p>
+                
+                <div class="modules-list">
+                    <div class="toggle-group">
+                        <div class="toggle-info">
+                            <i class="fa-solid fa-box-open module-icon"></i>
+                            <span class="label-text">Resource Tracking</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="mod-resources" value="resources" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="toggle-group">
+                        <div class="toggle-info">
+                            <i class="fa-solid fa-users module-icon"></i>
+                            <span class="label-text">Volunteer Coordination</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="mod-volunteers" value="volunteers" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="toggle-group">
+                        <div class="toggle-info">
+                            <i class="fa-solid fa-bullhorn module-icon"></i>
+                            <span class="label-text">Public Communication</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="mod-comms" value="comms" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="toggle-group">
+                        <div class="toggle-info">
+                            <i class="fa-solid fa-headset module-icon"></i>
+                            <span class="label-text">Helpline Management</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="mod-helpline" value="helpline">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="toggle-group">
+                        <div class="toggle-info">
+                            <i class="fa-solid fa-file-signature module-icon"></i>
+                            <span class="label-text">Grievance Collection</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="mod-grievance" value="grievance">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="config-section mb-0">
+                <h3><i class="fa-solid fa-palette"></i> Branding & Theming</h3>
+                <div class="theme-selector">
+                    <button class="color-swatch active" data-color="blue" style="--swatch-color: #3b82f6;" title="Ocean Blue"></button>
+                    <button class="color-swatch" data-color="red" style="--swatch-color: #ef4444;" title="Alert Red"></button>
+                    <button class="color-swatch" data-color="teal" style="--swatch-color: #14b8a6;" title="Rescue Teal"></button>
+                    <button class="color-swatch" data-color="orange" style="--swatch-color: #f97316;" title="Warning Orange"></button>
+                    <button class="color-swatch" data-color="purple" style="--swatch-color: #8b5cf6;" title="Community Purple"></button>
+                </div>
+            </div>
+            
+            <button class="deploy-btn glow-effect">
+                <span><i class="fa-solid fa-rocket"></i> Deploy Portal</span>
+            </button>
+        </aside>
+
+        <!-- ============================================== -->
+        <!-- LIVE PREVIEW AREA                              -->
+        <!-- ============================================== -->
+        <main class="preview-area">
+            <div class="preview-header glass-panel-light">
+                <div class="preview-title-badge">
+                    <span class="pulse-dot"></span> Live Preview
+                </div>
+                <div class="view-toggles">
+                    <button class="view-btn active" data-view="mobile"><i class="fa-solid fa-mobile-screen"></i> Mobile</button>
+                    <button class="view-btn" data-view="desktop"><i class="fa-solid fa-desktop"></i> Desktop</button>
+                </div>
+            </div>
+            
+            <div class="device-wrapper">
+                <div class="device-mockup mobile" id="device-view">
+                    <!-- The Simulated Portal -->
+                    <div class="portal-container">
+                        <header class="portal-header">
+                            <div class="brand">
+                                <div class="brand-icon"><i class="fa-solid fa-shield-cat"></i></div>
+                                <div>
+                                    <h1 id="preview-title">Flood Response</h1>
+                                    <div class="location-badge">
+                                        <i class="fa-solid fa-location-dot"></i> <span id="preview-location">Kerala, India</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+                        </header>
+                        
+                        <div class="portal-hero">
+                            <h2 id="hero-title">Emergency Assistance Portal</h2>
+                            <p>Official resources and real-time updates for the affected region.</p>
+                        </div>
+                        
+                        <div class="portal-body" id="portal-modules">
+                            <!-- Modules injected by app.js here -->
+                        </div>
+                        
+                        <footer class="portal-footer">
+                            <p>Emergency Contact: <strong>112</strong></p>
+                            <p class="copyright">Powered by Crisis OS</p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- TEMPLATES FOR MODULES                          -->
+    <!-- ============================================== -->
+    
+    <template id="tpl-resources">
+        <div class="module-card fade-in" id="view-mod-resources">
+            <div class="mod-icon-wrapper"><i class="fa-solid fa-box-open"></i></div>
+            <div class="mod-content">
+                <h4>Resource Tracking</h4>
+                <p>Request supplies or view available relief camps in <strong class="loc-placeholder">the area</strong>.</p>
+                <div class="stats-row">
+                    <div class="stat"><span class="val">14</span> <span class="lbl">Active Camps</span></div>
+                    <div class="stat"><span class="val">2.5k</span> <span class="lbl">Meals dist.</span></div>
+                </div>
+                <div class="action-buttons">
+                    <button class="action-btn primary">Request Supplies</button>
+                    <button class="action-btn secondary">View Camps</button>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    <template id="tpl-volunteers">
+        <div class="module-card fade-in" id="view-mod-volunteers">
+            <div class="mod-icon-wrapper"><i class="fa-solid fa-users"></i></div>
+            <div class="mod-content">
+                <h4>Volunteer Coordination</h4>
+                <p>Sign up to help or request volunteer assistance on the ground.</p>
+                <div class="progress-container">
+                    <div class="progress-bar"><div class="fill" style="width:75%"></div></div>
+                    <div class="progress-text"><strong>750</strong>/1000 needed volunteers</div>
+                </div>
+                <button class="action-btn outline w-full">Join the Task Force</button>
+            </div>
+        </div>
+    </template>
+    
+    <template id="tpl-comms">
+        <div class="module-card fade-in" id="view-mod-comms">
+            <div class="mod-icon-wrapper"><i class="fa-solid fa-bullhorn"></i></div>
+            <div class="mod-content">
+                <h4>Public Communication</h4>
+                <p>Latest updates and official verified announcements.</p>
+                <div class="alert-box critical">
+                    <div class="alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <div class="alert-text">
+                        <strong>Critical Update:</strong> Evacuation order active for Zone 4. Please proceed to high ground.
+                    </div>
+                </div>
+                <button class="link-btn">View All Alerts <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </template>
+    
+    <template id="tpl-helpline">
+        <div class="module-card fade-in" id="view-mod-helpline">
+            <div class="mod-icon-wrapper"><i class="fa-solid fa-headset"></i></div>
+            <div class="mod-content">
+                <h4>Helpline Management</h4>
+                <p>Call our 24/7 dedicated support lines for immediate assistance.</p>
+                <div class="phone-numbers">
+                    <a href="tel:1070" class="phone-link"><i class="fa-solid fa-phone"></i> <strong>1070</strong> (Toll Free)</a>
+                    <a href="tel:1077" class="phone-link"><i class="fa-solid fa-phone"></i> <strong>1077</strong> (Control Room)</a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="tpl-grievance">
+        <div class="module-card fade-in" id="view-mod-grievance">
+            <div class="mod-icon-wrapper"><i class="fa-solid fa-file-signature"></i></div>
+            <div class="mod-content">
+                <h4>Reporting & Grievance</h4>
+                <p>File official reports for infrastructure damage or missing persons.</p>
+                <div class="action-buttons">
+                    <button class="action-btn warning w-full"><i class="fa-solid fa-plus"></i> File New Report</button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="app.js"></script>
+</body>
+</html>
